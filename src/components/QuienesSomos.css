@@ -1,0 +1,155 @@
+/* Contenedor general de Quienes Somos */
+.qs-container {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Sección gráfica principal */
+.qs-grafico {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.qs-grafico h2 {
+  font-size: 3rem;
+  color: #ffd36b;
+  margin-bottom: 1.5rem;
+}
+
+.qs-grafico p {
+  font-size: 1.6rem;
+  color: #f8f8f8;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+/* Fotos principales */
+.qs-grafico-fotos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.qs-grafico-fotos .foto-placeholder {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.qs-grafico-fotos .foto-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.qs-grafico-fotos .foto-placeholder:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 211, 107, 0.4);
+}
+
+/* Sección Liderazgo */
+.qs-liderazgo h2 {
+  font-size: 2.8rem;
+  color: #ffd36b;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.lideres {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Cada líder */
+.lider {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.lider.reverse {
+  flex-direction: row-reverse;
+}
+
+.lider-desc {
+  flex: 1.5; /* cuadro más ancho */
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  color: #d2b48c; /* texto marrón */
+}
+
+.lider-desc h3 {
+  color: #ffd36b; /* título dorado */
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.lider-desc p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+/* Foto del líder */
+.lider-foto {
+  flex: 0 0 250px; /* foto más grande */
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px; /* cuadrado con bordes redondeados */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.lider-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .qs-grafico-fotos {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .qs-grafico-fotos .foto-placeholder {
+    width: 100%;
+    max-width: 350px;
+    height: 220px;
+  }
+
+  .lider {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .lider.reverse {
+    flex-direction: column;
+  }
+
+  .lider-foto {
+    width: 200px;
+    height: 200px;
+  }
+
+  .lider-desc {
+    flex: unset;
+    width: 100%;
+  }
+}

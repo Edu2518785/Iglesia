@@ -1,0 +1,176 @@
+/* src/styles/index.css — paleta cálida y estilos base */
+:root{
+  --bg: #fbf8f3;
+  --primary: #6b4e24;   /* marrón principal (tipo madera) */
+  --accent: #d97706;    /* terracota / llamar la acción */
+  --muted: #6b6b6b;
+  --card: #ffffff;
+  --container-w: 1100px;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(16,24,40,0.06);
+  --gap: 1rem;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* reset / base */
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#2b2b2b;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+  font-size:16px;
+}
+
+/* contenedor central */
+.container{
+  width:90%;
+  max-width:var(--container-w);
+  margin:0 auto;
+  padding:0 0.5rem;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background-color: #f7f4ef;
+  border-bottom: 1px solid rgba(107,78,36,0.08);
+  padding: 18px 0;
+  box-shadow: 0 2px 6px rgba(11,15,19,0.02);
+}
+
+.header-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--gap);
+}
+
+/* logo / título */
+.logo{
+  font-size:1.5rem;
+  color:var(--primary);
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+
+/* navegación */
+.nav-list{
+  list-style:none;
+  display:flex;
+  gap:1rem;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+
+.nav-list a{
+  color:var(--primary);
+  text-decoration:none;
+  padding:6px 8px;
+  border-radius:8px;
+  font-weight:600;
+  transition:background .18s ease, color .18s ease, transform .12s ease;
+}
+
+.nav-list a:hover{
+  background:rgba(217,119,6,0.08);
+  transform:translateY(-1px);
+}
+
+/* ===== MAIN / HOME ===== */
+main{
+  padding:28px 0 60px;
+}
+
+/* hero / bienvenida */
+.home{
+  margin-top:18px;
+}
+
+.home-container{
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+.home h2{
+  margin:0;
+  color:var(--primary);
+  font-size:1.9rem;
+}
+
+.home p{
+  margin:10px 0 0;
+  color:var(--muted);
+  font-size:1.02rem;
+}
+
+/* CTA row */
+.cta-row{
+  margin-top:16px;
+  display:flex;
+  gap:0.6rem;
+  align-items:center;
+}
+
+/* botón principal */
+.btn-primary{
+  display:inline-block;
+  background:var(--accent);
+  color:white;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow: 0 6px 18px rgba(217,119,6,0.18);
+  transition:transform .12s ease, box-shadow .12s ease, opacity .12s;
+}
+
+.btn-primary:hover{ transform:translateY(-3px); opacity:0.98; }
+
+/* tarjeta / servicios */
+.services{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+}
+
+.card{
+  background:var(--card);
+  padding:14px;
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  color:#222;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  background: #f7f4ef;
+  border-top:1px solid rgba(107,78,36,0.06);
+  padding:22px 0;
+  margin-top:40px;
+}
+
+.footer-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  color:var(--muted);
+}
+
+.footer-text{ font-weight:600; color:var(--primary) }
+.footer-sub{ font-size:0.95rem; color:var(--muted) }
+
+/* pequeños detalles responsive */
+@media (max-width:720px){
+  .header-container{ flex-direction:column; align-items:flex-start; gap:8px }
+  .nav-list{ flex-wrap:wrap; gap:8px }
+  .home-container{ padding:18px }
+  .logo{ font-size:1.25rem }
+}

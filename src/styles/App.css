@@ -1,0 +1,29 @@
+/* src/styles/App.css */
+.app{display:flex; min-height:100vh; flex-direction:column}
+.header-inner{display:flex; align-items:center; justify-content:space-between; gap:1rem}
+.brand{display:flex; align-items:center; gap:0.75rem}
+.logo{width:56px; height:56px; border-radius:8px; object-fit:cover}
+.site-title{margin:0; font-size:1.25rem; color:var(--primary)}
+.site-subtitle{margin:0; font-size:0.85rem; color:var(--muted)}
+
+.site-header{background:transparent; padding:1rem 0}
+.nav a{margin-left:1rem; color:var(--primary); font-weight:600; opacity:0.9}
+.nav a:hover{opacity:1; text-decoration:underline}
+
+.main{flex:1; padding:2rem 0}
+.hero{padding:2rem; background: linear-gradient(180deg, rgba(255,255,255,0.6), transparent); border-radius:var(--radius); box-shadow:var(--shadow)}
+.hero h2{margin:0; font-size:2rem; color:var(--primary)}
+.hero p{margin-top:0.5rem; color:var(--muted)}
+
+.cta-row{margin-top:1rem; display:flex; gap:0.5rem}
+.btn{background:var(--accent); color:white; padding:0.6rem 1rem; border-radius:8px; font-weight:600}
+.btn-outline{background:transparent; border:2px solid var(--accent); color:var(--accent)}
+
+.services{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:1.5rem}
+.card{background:var(--card); padding:1rem; border-radius:12px; box-shadow:var(--shadow)}
+
+.site-footer{padding:1.25rem 0; text-align:center; color:var(--muted)}
+.App {
+  min-height: 100vh; /* Asegura que App ocupe toda la altura de la pantalla */
+  background-color: transparent;
+}

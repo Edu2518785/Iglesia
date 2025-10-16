@@ -1,0 +1,108 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  /* 🎨 Fondo negro sólido */
+  background-color: #ffffff !important;
+
+  color: #ffffff;
+  padding: 1.2rem 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-bottom: none;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: rotate(-5deg) scale(1.08);
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.site-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: #cccccc;
+  opacity: 1;
+}
+
+.nav a {
+  color: #ffffff;
+  margin: 0 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffd700; /* Dorado brillante */
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: #ffd700; /* Dorado al pasar el mouse */
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* 🔹 Responsivo */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+  }
+
+  .nav a {
+    font-size: 1rem;
+    margin: 0 0.8rem;
+  }
+}

@@ -1,13 +1,31 @@
+/* ===== Reset y tipografía ===== */
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* ===== Fondo ===== */
+  background-image: url('/src/assets/images/fondo.jpg'); /* ruta absoluta */
+  background-size: cover;        /* que cubra toda la pantalla */
+  background-position: center;   /* centrado */
+  background-repeat: no-repeat;
+  background-attachment: fixed;  /* efecto tipo parallax */
+  background-color: #fdfaf6;     /* color cálido de respaldo */
+  min-height: 100vh;
 }
 
+/* ===== Código ===== */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* ===== Asegura que App no tape el fondo ===== */
+#root,
+.App {
+  min-height: 100vh;
+  background-color: transparent;
 }

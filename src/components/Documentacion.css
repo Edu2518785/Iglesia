@@ -1,0 +1,45 @@
+.seccion {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.seccion h2 {
+  font-size: 3rem;
+  color: #ffd36b;
+  margin-bottom: 1rem;
+}
+
+.seccion p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #f1f1f1;
+}
+
+.doc-list {
+  list-style: none;
+  padding: 0;
+}
+
+.doc-list li {
+  margin: 1rem 0;
+}
+
+.doc-list a {
+  text-decoration: none;
+  color: #ffd36b;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid #ffd36b;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.doc-list a:hover {
+  background-color: #ffd36b;
+  color: #000;
+}

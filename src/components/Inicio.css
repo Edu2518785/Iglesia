@@ -1,0 +1,116 @@
+/* 🔹 Fondo transparente para que se vea tu imagen */
+.home {
+  min-height: 100vh;
+  background: transparent;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔹 Contenedor principal */
+.home-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 4rem;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+/* 🔹 Título principal */
+.home-container h2 {
+  font-size: 3.5rem;
+  color: #ffd36b; /* dorado cálido */
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* 🔹 TEXTO GIGANTE (Ignorando buenas prácticas) */
+.home-container > p {
+  font-size: 6rem;  /* tamaño gigante */
+  font-weight: 700; /* negrita */
+  line-height: 1.4;
+  color: #f1f1f1;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+/* 🔹 Sección de Visión y Misión */
+.vision-mision {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* 🔹 Tarjetas amplias con fondo semitransparente */
+.card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 25px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 12px 30px rgba(255, 211, 107, 0.35);
+}
+
+/* 🌟 Títulos dentro de las tarjetas (Visión/Misión) */
+.card h3 {
+  font-size: 3.2rem;
+  margin-bottom: 1.8rem;
+  color: #ffd36b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 🚀 Texto dentro de las tarjetas (Visión/Misión) */
+.card p {
+  font-size: 2.1rem;
+  color: #f8f8f8;
+  line-height: 2.2;
+  font-weight: 700;
+}
+
+/* 🔹 Adaptable a pantallas pequeñas */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 3rem;
+  }
+
+  .home-container h2 {
+    font-size: 2.8rem;
+  }
+
+  .home-container > p {
+    font-size: 3rem;  /* más grande que antes para móvil */
+    font-weight: 700;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 2.5rem;
+  }
+
+  .card h3 {
+    font-size: 2.5rem;
+  }
+
+  .card p {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+}
