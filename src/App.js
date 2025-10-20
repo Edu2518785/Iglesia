@@ -12,31 +12,31 @@ function App() {
 
   return (
     <div className="App" style={{ minHeight: '100vh', position: 'relative' }}>
-      {/* Fondo */}
+      {/* 🔹 Fondo adaptable a todas las pantallas */}
       <div
         style={{
           backgroundImage: `url(${fondo})`,
-          backgroundSize: '120%',
+          backgroundSize: 'cover', // ✅ llena toda la pantalla
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
-          position: 'absolute',
+          position: 'fixed', // ✅ se mantiene visible al hacer scroll
           top: 0,
           left: 0,
           width: '100%',
           height: '100%',
           zIndex: -1,
-          opacity: 0.2,
+          opacity: 0.25, // puedes ajustar la visibilidad
         }}
       ></div>
 
+      {/* 🔹 Header */}
       <Header setSeccionActiva={setSeccionActiva} />
 
-      {/* Secciones */}
+      {/* 🔹 Secciones */}
       {seccionActiva === 'inicio' && <Inicio />}
       {seccionActiva === 'quienessomos' && <QuienesSomos />}
       {seccionActiva === 'documentacion' && <Documentacion />}
-      {seccionActiva === 'debocionario' && <Devocionario />}
+      {seccionActiva === 'devocionario' && <Devocionario />}
     </div>
   );
 }

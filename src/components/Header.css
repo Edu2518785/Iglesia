@@ -4,14 +4,10 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-
-  /* 🎨 Fondo negro sólido */
   background-color: #ffffff !important;
-
-  color: #ffffff;
+  color: #000;
   padding: 1.2rem 3rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  border-bottom: none;
 }
 
 .header-inner {
@@ -24,85 +20,86 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  justify-content: flex-start;
-  flex: 1;
-}
-
-.nav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   flex: 1;
 }
 
 .logo {
   width: 60px;
   height: 60px;
-  transition: transform 0.3s ease;
 }
 
-.logo:hover {
-  transform: rotate(-5deg) scale(1.08);
-}
-
-.site-title {
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.site-subtitle {
-  margin: 0;
-  font-size: 1rem;
-  color: #cccccc;
-  opacity: 1;
+.nav {
+  display: flex;
+  gap: 1.2rem;
 }
 
 .nav a {
-  color: #ffffff;
-  margin: 0 1.2rem;
+  color: #000;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
   position: relative;
-  transition: all 0.3s ease;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #ffd700; /* Dorado brillante */
-  transition: width 0.3s ease;
 }
 
 .nav a:hover {
-  color: #ffd700; /* Dorado al pasar el mouse */
+  color: #ffd700;
 }
 
-.nav a:hover::after {
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
   width: 100%;
+  background-color: #000;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ✨ Animación del ícono cuando se abre */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
 }
 
 /* 🔹 Responsivo */
 @media (max-width: 768px) {
-  .site-header {
-    padding: 1rem 1.5rem;
+  .menu-toggle {
+    display: flex;
   }
 
-  .site-title {
-    font-size: 1.4rem;
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav.active {
+    display: flex;
   }
 
   .nav a {
-    font-size: 1rem;
-    margin: 0 0.8rem;
+    color: #000;
+    padding: 1rem;
+    font-size: 1.2rem;
   }
 }

@@ -1,6 +1,6 @@
 .devocionario-container {
   max-width: 1100px;
-  margin: 3rem auto;
+  margin: 130px auto 3rem auto; /* margen superior para que no quede debajo del header */
   padding: 2rem;
   text-align: center;
   color: #fff;
