@@ -4,10 +4,12 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #ffffff !important;
+  background: linear-gradient(90deg, #ffffff 0%, #f7f7f7 100%);
   color: #000;
-  padding: 1.2rem 3rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 1.2rem 2.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 .header-inner {
@@ -24,26 +26,44 @@
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
+}
+
+.site-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.site-subtitle {
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 0.2rem;
 }
 
 .nav {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
 .nav a {
-  color: #000;
+  color: #222;
   text-decoration: none;
   font-weight: 600;
   position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav a:hover {
-  color: #ffd700;
+  color: #c8a600;
 }
 
+/* Botón hamburguesa */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -53,6 +73,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 1100;
 }
 
 .bar {
@@ -63,7 +84,6 @@
   transition: 0.3s;
 }
 
-/* ✨ Animación del ícono cuando se abre */
 .menu-toggle.open .bar:nth-child(1) {
   transform: rotate(45deg) translateY(8px);
 }
@@ -74,32 +94,48 @@
   transform: rotate(-45deg) translateY(-8px);
 }
 
-/* 🔹 Responsivo */
+/* 📱 Modo responsive elegante */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
   }
 
   .nav {
-    display: none;
+    position: fixed;
+    top: 70px;
+    right: -60%;
+    width: 55%;
     flex-direction: column;
     align-items: center;
-    background-color: #ffffff;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
+    background: #ffffff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+    border-radius: 12px 0 0 12px;
     padding: 1rem 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
   }
 
   .nav.active {
-    display: flex;
+    right: 0;
   }
 
   .nav a {
-    color: #000;
-    padding: 1rem;
-    font-size: 1.2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+  }
+
+  .site-subtitle {
+    font-size: 0.85rem;
   }
 }
