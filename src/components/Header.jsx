@@ -1,17 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../logo192.svg';
 import './Header.css';
 
 export default function Header({ setSeccionActiva }) {
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const [scrollActivo, setScrollActivo] = useState(false);
+
+  // 🔹 Detectar scroll
+  useEffect(() => {
+    const manejarScroll = () => {
+      if (window.scrollY > 50) {
+        setScrollActivo(true);
+      } else {
+        setScrollActivo(false);
+      }
+    };
+
+    window.addEventListener('scroll', manejarScroll);
+    return () => window.removeEventListener('scroll', manejarScroll);
+  }, []);
 
   const handleLinkClick = (seccion) => {
     setSeccionActiva(seccion);
-    setMenuAbierto(false); // Cierra el menú al hacer clic
+    setMenuAbierto(false);
   };
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${scrollActivo ? 'scrolled' : ''}`}>
       <div className="container header-inner">
         <div className="brand">
           <img src={logo} alt="Iglesia logo" className="logo" />
@@ -32,8 +47,11 @@ export default function Header({ setSeccionActiva }) {
           <span className="bar"></span>
         </button>
 
-        {/* Menú de navegación */}
-        <nav className={`nav ${menuAbierto ? 'active' : ''}`} aria-label="Main navigation">
+        {/* Menú */}
+        <nav
+          className={`nav ${menuAbierto ? 'active' : ''}`}
+          aria-label="Main navigation"
+        >
           <a href="#inicio" onClick={(e) => { e.preventDefault(); handleLinkClick('inicio'); }}>Inicio</a>
           <a href="#quienessomos" onClick={(e) => { e.preventDefault(); handleLinkClick('quienessomos'); }}>¿Quiénes somos?</a>
           <a href="#documentacion" onClick={(e) => { e.preventDefault(); handleLinkClick('documentacion'); }}>Documentación</a>

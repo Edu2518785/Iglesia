@@ -1,71 +1,151 @@
+/* 🌟 Contenedor principal */
 .devocionario-container {
   max-width: 1100px;
-  margin: 130px auto 3rem auto; /* margen superior para que no quede debajo del header */
+  margin: 130px auto 3rem auto;
   padding: 2rem;
   text-align: center;
-  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  animation: fadeIn 0.8s ease;
 }
 
+/* ✨ Título */
 .devocionario-container h2 {
   font-size: 2.8rem;
-  color: #ffd36b;
-  margin-bottom: 1rem;
+  color: #c8a600;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
+/* 📖 Descripción */
 .devocionario-container p {
   font-size: 1.3rem;
-  margin-bottom: 2rem;
-  color: #f1f1f1;
+  margin-bottom: 2.5rem;
+  color: #555;
+  line-height: 1.8;
 }
 
-/* 🔹 Cuadros de oraciones */
+/* 🔹 Grid de oraciones (3 columnas fijas en escritorio) */
 .oraciones-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
   justify-content: center;
-  margin-bottom: 2rem;
+  align-items: start;
 }
 
+/* 🕊️ Tarjetas uniformes */
 .oracion-card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 211, 107, 0.4);
-  border-radius: 15px;
-  padding: 1.5rem 2rem;
-  cursor: pointer;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(200, 166, 0, 0.35);
+  border-radius: 18px;
+  padding: 1.6rem 1.9rem;
   font-size: 1.2rem;
   font-weight: 600;
-  transition: transform 0.3s ease, background 0.3s ease;
+  color: #c8a600;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* 🖱️ Hover */
 .oracion-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 211, 107, 0.2);
+  transform: translateY(-6px);
+  background: #fff;
+  color: #000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* 📘 Activa */
 .oracion-card.active {
-  background: rgba(255, 211, 107, 0.3);
-  border-color: #ffd36b;
+  background: #fff6d0;
+  border-color: #c8a600;
+  color: #000;
+  transform: scale(1.02);
 }
 
-/* 🔹 Contenido de la oración */
+/* 📂 Detalle: posición independiente para que no afecte el grid */
 .oracion-detalle {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
+  position: relative;
+  grid-column: 1 / -1; /* ocupa todo el ancho visualmente */
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
+  padding: 2rem;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 2rem auto;
   text-align: left;
+  border: 1px solid rgba(200, 166, 0, 0.25);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 0.5s ease;
+  z-index: 10;
 }
 
+/* 🕯️ Título dentro del detalle */
 .oracion-detalle h3 {
   font-size: 2rem;
-  color: #ffd36b;
+  color: #c8a600;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
+/* 📜 Texto */
 .oracion-detalle p {
-  font-size: 1.3rem;
-  color: #f1f1f1;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.9;
+}
+
+/* ✨ Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .devocionario-container h2 {
+    font-size: 2.2rem;
+  }
+
+  .devocionario-container p {
+    font-size: 1.1rem;
+  }
+
+  .oraciones-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .oracion-card {
+    font-size: 1.1rem;
+    height: auto;
+    padding: 1.3rem;
+  }
+
+  .oracion-detalle {
+    margin: 1.5rem auto;
+    padding: 1.6rem;
+  }
 }

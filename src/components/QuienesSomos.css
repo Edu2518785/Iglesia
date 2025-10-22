@@ -1,35 +1,38 @@
-/* Contenedor general de Quienes Somos */
+/* Contenedor general */
 .qs-container {
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Sección gráfica principal */
 .qs-grafico {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 20px;
   padding: 3rem;
   text-align: center;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .qs-grafico h2 {
+  font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  color: #ffd36b;
+  color: #D4AF37;
   margin-bottom: 1.5rem;
 }
 
 .qs-grafico p {
-  font-size: 1.6rem;
-  color: #f8f8f8;
+  font-size: 1.5rem;
+  color: #3A506B;
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }
 
-/* Fotos principales */
+/* Fotos */
 .qs-grafico-fotos {
   display: flex;
   justify-content: center;
@@ -43,27 +46,21 @@
   height: 200px;
   overflow: hidden;
   border-radius: 15px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.qs-grafico-fotos .foto-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .qs-grafico-fotos .foto-placeholder:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(255, 211, 107, 0.4);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
 }
 
 /* Sección Liderazgo */
 .qs-liderazgo h2 {
-  font-size: 2.8rem;
-  color: #ffd36b;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  color: #D4AF37;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -79,77 +76,63 @@
   display: flex;
   align-items: flex-start;
   gap: 3rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .lider.reverse {
   flex-direction: row-reverse;
 }
 
+/* Descripción del líder */
 .lider-desc {
-  flex: 1.5; /* cuadro más ancho */
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 15px;
-  color: #d2b48c; /* texto marrón */
+  flex: 1.5;
 }
 
 .lider-desc h3 {
-  color: #ffd36b; /* título dorado */
-  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  color: #E9C46A;
   font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .lider-desc p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  color: #3A506B;
   line-height: 1.7;
 }
 
-/* Foto del líder */
+/* Foto */
 .lider-foto {
-  flex: 0 0 250px; /* foto más grande */
+  flex: 0 0 250px;
   height: 250px;
   overflow: hidden;
-  border-radius: 15px; /* cuadrado con bordes redondeados */
+  border-radius: 15px;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .lider-foto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .qs-grafico-fotos {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .qs-grafico-fotos .foto-placeholder {
-    width: 100%;
-    max-width: 350px;
-    height: 220px;
-  }
-
   .lider {
     flex-direction: column;
-    gap: 2rem;
+    text-align: center;
   }
-
   .lider.reverse {
     flex-direction: column;
   }
-
   .lider-foto {
     width: 200px;
     height: 200px;
-  }
-
-  .lider-desc {
-    flex: unset;
-    width: 100%;
+    margin: 0 auto;
   }
 }

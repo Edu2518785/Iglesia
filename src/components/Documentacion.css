@@ -1,45 +1,105 @@
 .seccion {
-  padding: 3rem 2rem;
-  max-width: 900px;
+  padding: 5rem 2rem;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
-  color: #fff;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* 🔸 Título */
 .seccion h2 {
-  font-size: 3rem;
-  color: #ffd36b;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  color: #c8a600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
 }
 
+/* 🔸 Descripción */
 .seccion p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #f1f1f1;
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  color: #444;
+  line-height: 1.8;
 }
 
+/* 📂 Contenedor de documentos */
 .doc-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   list-style: none;
   padding: 0;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 800px;
 }
 
-.doc-list li {
-  margin: 1rem 0;
+/* 📁 Tarjeta */
+.doc-item {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(200, 166, 0, 0.3);
+  border-radius: 15px;
+  padding: 1.8rem 1.2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
-.doc-list a {
+/* 🖱️ Hover: animación elegante en PC */
+@media (hover: hover) {
+  .doc-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .doc-item:hover a {
+    color: #000;
+  }
+}
+
+/* 🔗 Enlace */
+.doc-item a {
   text-decoration: none;
-  color: #ffd36b;
-  font-size: 1.6rem;
+  color: #c8a600;
+  font-size: 1.3rem;
   font-weight: 600;
-  padding: 0.8rem 1.2rem;
-  border: 1px solid #ffd36b;
-  border-radius: 10px;
+  display: block;
   transition: all 0.3s ease;
-  display: inline-block;
 }
 
-.doc-list a:hover {
-  background-color: #ffd36b;
-  color: #000;
+/* ✨ Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .seccion h2 {
+    font-size: 2.2rem;
+  }
+
+  .seccion p {
+    font-size: 1.1rem;
+  }
+
+  .doc-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* En móvil: el cuadro no tiene hover */
+  .doc-item {
+    transform: none !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
 }
