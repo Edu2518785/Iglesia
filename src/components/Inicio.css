@@ -1,116 +1,112 @@
-/* 🔹 Fondo transparente para que se vea tu imagen */
+/* Importa las fuentes correctas */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+
+/* 🔹 Estilo general */
 .home {
   min-height: 100vh;
   background: transparent;
-  padding: 4rem 2rem;
-  text-align: center;
-  color: #fff;
+  padding: 5rem 2rem;
+  font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 /* 🔹 Contenedor principal */
 .home-container {
+  width: 100%;
   max-width: 1200px;
-  margin: 3rem auto;
-  padding: 4rem;
-  background: rgba(0, 0, 0, 0.45);
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-}
-
-/* 🔹 Título principal */
-.home-container h2 {
-  font-size: 3.5rem;
-  color: #ffd36b; /* dorado cálido */
-  margin-bottom: 2rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-/* 🔹 TEXTO GIGANTE (Ignorando buenas prácticas) */
-.home-container > p {
-  font-size: 6rem;  /* tamaño gigante */
-  font-weight: 700; /* negrita */
-  line-height: 1.4;
-  color: #f1f1f1;
-  margin-bottom: 4rem;
+  padding: 4rem 3rem;
+  background: rgba(255, 255, 255, 0.6); /* limpio y sin neblina */
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   text-align: center;
 }
 
-/* 🔹 Sección de Visión y Misión */
+/* 🔹 Título principal */
+.home-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #D4AF37; /* Dorado elegante */
+  margin-bottom: 1.5rem;
+}
+
+/* 🔹 Subtítulo */
+.home-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  color: #3A506B; /* Azul grisáceo sobrio */
+  font-weight: 600;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+/* 🔹 Sección Visión y Misión */
 .vision-mision {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 3rem;
   flex-wrap: wrap;
+  gap: 3rem;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* 🔹 Tarjetas amplias con fondo semitransparente */
+/* 🔹 Tarjetas */
 .card {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 25px;
-  padding: 3rem;
-  width: 100%;
-  max-width: 550px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 2.5rem;
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 12px 30px rgba(255, 211, 107, 0.35);
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
 }
 
-/* 🌟 Títulos dentro de las tarjetas (Visión/Misión) */
-.card h3 {
-  font-size: 3.2rem;
-  margin-bottom: 1.8rem;
-  color: #ffd36b;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+/* 🔹 Título de la tarjeta */
+.card-title {
+  font-family: 'Playfair Display', serif;
+  color: #D4AF37;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-/* 🚀 Texto dentro de las tarjetas (Visión/Misión) */
-.card p {
-  font-size: 2.1rem;
-  color: #f8f8f8;
-  line-height: 2.2;
-  font-weight: 700;
+/* 🔹 Texto de la tarjeta (Misión y Visión) */
+.card-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  color: #3A506B;
+  line-height: 1.9;
+  text-align: center;
+  font-weight: 500;
 }
 
-/* 🔹 Adaptable a pantallas pequeñas */
+/* 🔹 Responsivo */
 @media (max-width: 768px) {
-  .home-container {
-    padding: 3rem;
-  }
-
-  .home-container h2 {
-    font-size: 2.8rem;
-  }
-
-  .home-container > p {
-    font-size: 3rem;  /* más grande que antes para móvil */
-    font-weight: 700;
+  .vision-mision {
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .card {
     max-width: 100%;
-    padding: 2.5rem;
   }
 
-  .card h3 {
-    font-size: 2.5rem;
+  .home-title {
+    font-size: 2.4rem;
   }
 
-  .card p {
-    font-size: 1.8rem;
-    font-weight: 700;
+  .home-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .card-text {
+    font-size: 1.1rem;
   }
 }

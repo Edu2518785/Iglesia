@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './QuienesSomos.css';
 import foto1 from '../assets/images/foto1.jpg';
 import foto2 from '../assets/images/foto2.jpg';
@@ -10,10 +10,14 @@ import cardenal4 from '../assets/images/cardenal4.jpg';
 import cardenal5 from '../assets/images/cardenal5.jpg';
 
 export default function QuienesSomos() {
+  const [imagenAmpliada, setImagenAmpliada] = useState(null);
+
+  const abrirImagen = (src) => setImagenAmpliada(src);
+  const cerrarImagen = () => setImagenAmpliada(null);
+
   return (
     <main className="qs-container">
-      
-      {/* Sección principal gráfica existente */}
+      {/* 📸 Sección principal gráfica */}
       <section className="qs-grafico">
         <div className="qs-grafico-content">
           <h2>Somos la Iglesia La Luz</h2>
@@ -22,20 +26,20 @@ export default function QuienesSomos() {
             en la fe, la esperanza y la solidaridad.
           </p>
           <div className="qs-grafico-fotos">
-            <div className="foto-placeholder">
-              <img src={foto1} alt="Foto 1" />
-            </div>
-            <div className="foto-placeholder">
-              <img src={foto2} alt="Foto 2" />
-            </div>
-            <div className="foto-placeholder">
-              <img src={foto3} alt="Foto 3" />
-            </div>
+            {[foto1, foto2, foto3, foto1, foto2, foto1, foto2, foto3, foto1, foto2, ].map((img, i) => (
+              <div
+                key={i}
+                className="foto-placeholder"
+                onClick={() => abrirImagen(img)}
+              >
+                <img src={img} alt={`Foto ${i + 1}`} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 🔹 NUEVA SECCIÓN: Liderado por */}
+      {/* 👤 Liderazgo */}
       <section className="qs-liderazgo">
         <h2>Liderado por</h2>
 
@@ -92,6 +96,12 @@ export default function QuienesSomos() {
         </div>
       </section>
 
+      {/* 🌕 Modal imagen completa */}
+      {imagenAmpliada && (
+        <div className="modal-foto" onClick={cerrarImagen}>
+          <img src={imagenAmpliada} alt="Vista ampliada" />
+        </div>
+      )}
     </main>
   );
 }
